@@ -1,0 +1,112 @@
+<div [ngStyle]="{'background': '#fff url(' + imgBackground + ')','color':'#fff', 'background-repeat': 'no-repeat'}">'
+  <!--<header class="">
+    <div class="fondoHeader">
+      <div class="linea img">
+        <img class="logo" src="http://senior91.com/img/insignia.gif" width="200" height="230">
+      </div>
+      <div class="linea title">
+        <div class="textCenter">
+          <h4 class="tituloIns">{{tipoInstitucion}}</h4>
+          <h2 class="tituloIns">{{nombreSecundario}} </h2>
+          <h1 class="tituloIns">{{nombrePrimario}} </h1>
+        </div>
+      </div>
+      <div class="tituloHeader textCenter">CONTROL DE INGRESO - SALIDA</div>
+    </div>
+
+  </header>-->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <section>
+    <div class="container center  ">
+      <div class="ancho60">
+        <div class="center campos ">
+
+          <div class="casilla campoLn ">
+            <div>
+              <div>
+                <h3 class=" matricula textCenter degra"> NÚMERO DE MATRÍCULA</h3>
+              </div>
+              <div>
+                <h3 class="matricula textCenter fondo fontBlack ">
+                  <div class="mid">
+                    <div class="cntt">{{perfil.nroMatricula}}</div>
+                  </div>
+                </h3>
+              </div>
+            </div>
+
+          </div>
+          <div class="datos">
+            <div class="casilla">
+              <div>
+                <h3 class="titulo degra">APELLIDOS Y NOMBRES</h3>
+              </div>
+              <p class="campo fontBlack ">{{perfil.paterno | uppercase }} {{perfil.materno | uppercase }} {{perfil.nombre | uppercase }}</p>
+            </div>
+            <div class="casilla">
+              <h3 class="titulo degra">CURSO</h3>
+              <p class="campo fontBlack">{{perfil.curso | uppercase }} </p>
+            </div>
+            <div class="casilla">
+              <h3 class="titulo degra">TURNO</h3>
+              <p class="campo fontBlack">{{perfil.turno | uppercase }} </p>
+            </div>
+          </div>
+          <div class="casilla campoLn ">
+
+            <div class="textCenter registro">
+              <h3 class="tituloES degra">INGRESO</h3>
+              <p class="campoES fontBlack"> {{perfil.hora_llegada }} Hrs</p>
+            </div>
+            <div class=" textCenter registro">
+              <h3 class="tituloES degra">SALIDA</h3>
+              <p class="campoES fontBlack"> {{perfil.hora_salida }} Hrs </p>
+            </div>
+
+          </div>
+        </div>
+
+
+        <form (ngSubmit)="onSubmit()" #horaForm="ngForm">
+          <div class="textCenter registro">
+            <h3 class="tituloES degra">Hora Salida</h3>
+            <input type="time" class="campoES fontBlack" id="minHoraSalida" required [(ngModel)]="model.minHoraSalida" name="minHoraSalida" #minHoraSalida="ngModel">
+            <div [hidden]="minHoraSalida.valid || minHoraSalida.pristine">
+              Hora es requerida
+            </div>
+            <button type="button" class="titulo degra" [disabled]="!horaForm.form.valid" (click)="cambioHora()">ENVIAR</button>
+          </div>
+
+
+          <!--<button type="button"class="titulo degra" (click)="cambioHora(); horaForm.reset()">New Hero</button>-->
+        </form>
+      </div>
+      <div style="" class="ancho40">
+
+        <div class="bloqueimg">
+          <img [src]="perfil.img ? perfil.img : './assets/img/people.png'" width="180px" height="180px" alt="">
+        </div>
+        <div class="bloque center">
+          <qr-code [value]="'Yo world!'" size="130"></qr-code>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <footer class="foot"></footer>
+</div>
